@@ -1,6 +1,6 @@
 {
   "name": "react-native-usefull",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "UI Toolset & Components and API Library for React Native with RTL support.",
   "main": "src/index.js",
   "react-native": "src/index.js",
@@ -10,12 +10,10 @@
   ],
   "scripts": {
     "test": "jest",
-    "typescript": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "release": "release-it",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn",
-    "prepare": "bob build"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
