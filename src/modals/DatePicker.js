@@ -7,7 +7,7 @@ import Modal from 'react-native-modal';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Picker } from 'react-native-best-wheel-datepicker';
 import m from 'moment-jalaali';
-import UFRN from '../../UFRN';
+import UFRN from '../../';
 
 
 type PropsType = {

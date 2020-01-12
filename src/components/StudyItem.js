@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, I18nManager, ImageSourcePropType, ViewStyle, TextStyle } from 'react-native'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
-import UFRN from '../../UFRN';
+import UFRN from '../../';
 
 type PropsType = {
     /**
