@@ -1,0 +1,81 @@
+{
+  "name": "react-native-usefull",
+  "version": "0.0.1",
+  "description": "UI Toolset & Components and API Library for React Native with RTL support.",
+  "main": "src/index.js",
+  "react-native": "src/index.js",
+  "module": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint --ext .js,.ts,.tsx .",
+    "release": "release-it",
+    "example": "yarn --cwd example",
+    "bootstrap": "yarn example && yarn",
+    "prepare": "bob build"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "react-native-usefull",
+    "react-native-component",
+    "react-component",
+    "react-native",
+    "eact-native-fast-image",
+    "react-native-responsive-screen",
+    "react-native-best-wheel-datepicker",
+    "moment-jalaali",
+    "react-native-modal",
+    "ios",
+    "android",
+    "tab",
+    "swipe",
+    "scrollable",
+    "coverflow"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abbasmoosavi/react-native-usefull.git"
+  },
+  "author": "Abbas moosavi <moosaviabbas74@yahoo.com> (https://github.com/abbasmoosavi/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abbasmoosavi/react-native-usefull.git/issues"
+  },
+  "homepage": "https://github.com/abbasmoosavi/react-native-usefull.git#readme",
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "moment-jalaali": "^0.9.1",
+    "prop-types": "^15.5.8",
+    "react-native": "^0.61.5",
+    "react-native-best-wheel-datepicker": "^0.0.1",
+    "react-native-fast-image": "^7.0.2",
+    "react-native-modal": "^11.5.3",
+    "react-native-responsive-screen": "^1.3.1"
+  },
+  "@react-native-community/bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  }
+}
