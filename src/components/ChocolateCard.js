@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, I18nManager, ImageSourcePropType, ViewStyle, TextStyle } from 'react-native'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
-import UFRN from '../../';
+import UFRN from 'react-native-usefull';
 
 type PropsType = {
     /**
@@ -59,11 +59,17 @@ type PropsType = {
      * @property
      * button backgorund color
      */
-    backgroundColorButton: String
+    backgroundColorButton: String,
+    /**
+     * @property
+     * button style,
+     * style for button
+     */
+    buttonStyle?: ViewStyle | ViewStyle[],
 };
 type StateType = {
 };
-class StudyItem extends Component<PropsType, StateType>{
+class ChocolateCard extends Component<PropsType, StateType>{
     constructor(props) {
         super(props)
         this.state = {
@@ -81,7 +87,7 @@ class StudyItem extends Component<PropsType, StateType>{
 
     render() {
         const { backgroundColor, boxRadius, shadow, shadowHeight, textColor, fontSize } = this.state
-        const { style, imageSource, text, title, titleStyle, textStyle, textButtonStyle, onPress, backgroundColorButton, textButton } = this.props
+        const { style, imageSource, text, title, titleStyle, textStyle, textButtonStyle, onPress, backgroundColorButton, textButton, buttonStyle } = this.props
         return (
             <View
                 style={[{
@@ -98,7 +104,7 @@ class StudyItem extends Component<PropsType, StateType>{
                 }, style]}>
                 <UFRN.Image
                     style={{ width: '100%', height: '60%', borderRadius: boxRadius }}
-                    source={{ uri: imageSource }}
+                    source={imageSource}
                 />
                 <View style={{ width: '100%', flexDirection: 'column', height: '35%', paddingVertical: wp('2%'), paddingHorizontal: wp('4%') }}>
 
@@ -112,7 +118,7 @@ class StudyItem extends Component<PropsType, StateType>{
                     <UFRN.Button
                         onPress={onPress}
                         text={textButton}
-                        style={{ position: 'absolute', bottom: -wp('7.5'), alignSelf: 'center', width: wp('26%'), height: wp('7%'), backgroundColor: backgroundColorButton }}
+                        style={[{ position: 'absolute', bottom: -wp('7.5'), alignSelf: 'center', width: wp('26%'), height: wp('7%'), backgroundColor: backgroundColorButton }, buttonStyle]}
                         textStyle={[{ color: textColor, fontSize }, textButtonStyle]}
                     />
 
@@ -125,4 +131,4 @@ class StudyItem extends Component<PropsType, StateType>{
 }
 
 
-export default StudyItem
+export default ChocolateCard

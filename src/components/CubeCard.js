@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import { Text, ViewStyle, TextStyle, ImageSourcePropType } from 'react-native'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
-import UFRN from '..';
+import UFRN from 'react-native-usefull';
 
 type PropsType = {
     /**
@@ -45,7 +45,7 @@ type PropsType = {
 };
 type StateType = {
 };
-class MagazineCategoriesItem extends Component<PropsType, StateType>{
+class CubeCard extends Component<PropsType, StateType>{
 
     constructor(props) {
         super(props)
@@ -72,4 +72,4 @@ class MagazineCategoriesItem extends Component<PropsType, StateType>{
 
 
 
-export default MagazineCategoriesItem
+export default CubeCard

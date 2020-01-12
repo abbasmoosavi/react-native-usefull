@@ -2,8 +2,8 @@ import Button from "./components/Button";
 import WideButton from "./components/WideButton";
 import View from "./components/View";
 import Image from "./components/Image";
-import MagazineCategoriesItem from "./components/MagazineCategoriesItem";
-import StudyItem from "./components/StudyItem";
+import CubeCard from "./components/CubeCard";
+import ChocolateCard from "./components/ChocolateCard";
 import PersianJs from "./helper/PersianJs";
 import ProgressBar from "./components/ProgressBar";
 import DatePicker from "./modals/DatePicker";
@@ -18,8 +18,8 @@ export default {
     WideButton,
     View,
     Image,
-    MagazineCategoriesItem,
-    StudyItem,
+    CubeCard,
+    ChocolateCard,
     PersianJs,
     ProgressBar,
     DatePicker,
