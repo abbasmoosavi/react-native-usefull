@@ -1,6 +1,6 @@
 {
   "name": "react-native-usefull",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "UI Toolset & Components and API Library for React Native with RTL support.",
   "main": "src/index.js",
   "react-native": "src/index.js",
@@ -35,7 +35,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abbasmoosavi/react-native-usefull.git"
+    "url": "git+https://github.com/abbasmoosavi/react-native-usefull.git",
+    "baseUrl": "https://github.com/github_account/react-native-usefull"
   },
   "author": "Abbas moosavi <moosaviabbas74@yahoo.com> (https://github.com/abbasmoosavi/)",
   "license": "MIT",
