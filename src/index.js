@@ -11,6 +11,7 @@ import TimePicker from "./modals/TimePicker";
 import LanguagePicker from "./modals/LanguagePicker";
 import Ripple from "./helper/Ripple";
 import FontSize from "./helper/FontSize";
+import ErrorBoundary from "./helper/ErrorBoundary";
 import Values from "./configs/Values";
 
 export default {
@@ -27,5 +28,6 @@ export default {
     LanguagePicker,
     Ripple,
     FontSize,
-    Values
+    Values,
+    ErrorBoundary
 }
