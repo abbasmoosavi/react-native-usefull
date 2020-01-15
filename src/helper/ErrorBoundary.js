@@ -57,6 +57,7 @@ class ErrorBoundary extends React.Component<Props, State> {
                             <Text style={{ color: '#707070', fontSize: FontSize.SUBTITLE }}>{error.toString()}</Text>
                         </TouchableOpacity>
                         <Button
+                            style={{ alignSelf: 'center', marginVertical: hp('1') }}
                             onPress={() => this.resetError()}
                             textStyle={[{ fontSize: FontSize.BUTTON }, textStyle]}
                             text={'اجرای مجدد'}
