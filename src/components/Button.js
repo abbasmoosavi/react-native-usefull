@@ -99,7 +99,7 @@ class Button extends Component<PropsType, StateType>{
                 {imageSource !== undefined ? loading ? (
                     <ActivityIndicator color={loadingColor} size={fontSize * 1.5} />
                 ) : (
-                        <UFRN.Image style={[{ height: '40%', width: '40%' }, imageStyle]} source={imageSource} resizeMode={'contain'} />
+                        <UFRN.Image style={[{ height: '40%', width: '40%' }, imageStyle]} tintColor={imageStyle.tintColor} source={imageSource} resizeMode={'contain'} />
                     ) : null}
 
             </UFRN.Ripple>
