@@ -25,6 +25,12 @@ type PropsType = {
     dateType?: 'JALALI' | 'GREGORIAN',
     /**
      * @property
+     * class of date picker,
+     * choose on of BIRTHDATE or NOW
+     */
+    dateClass?: 'BIRTHDATE' | 'NOW',
+    /**
+     * @property
      * choose separator text
      * '/' | '-' | ':'
      */
@@ -130,10 +136,18 @@ class DatePicker extends Component<PropsType, StateType> {
     componentDidMount() {
 
         let currentYear = null
-        this.props.dateType === 'JALALI' ? currentYear = parseInt(m().jYear()) : currentYear = parseInt(m().year())
-        for (let i = currentYear; i <= currentYear + 100; i++) {
-            this.props.dateType === 'JALALI' ? this.state.years.push(UFRN.PersianJs(i).englishNumber().toString()) : this.state.years.push(i)
+        if (this.props.dateClass === 'BIRTHDATE') {
+            this.props.dateType === 'JALALI' ? currentYear = parseInt(m().jYear()) : parseInt(m().year())
+            for (let i = currentYear - 100; i <= currentYear; i++) {
+                this.props.dateType === 'JALALI' ? this.state.years.push(UFRN.PersianJs(i).englishNumber().toString()) : this.state.years.push(i)
+            }
+        } else {
+            this.props.dateType === 'JALALI' ? currentYear = parseInt(m().jYear()) : currentYear = parseInt(m().year())
+            for (let i = currentYear; i <= currentYear + 100; i++) {
+                this.props.dateType === 'JALALI' ? this.state.years.push(UFRN.PersianJs(i).englishNumber().toString()) : this.state.years.push(i)
+            }
         }
+
         this.setState({
             years: this.state.years
         })
@@ -141,8 +155,7 @@ class DatePicker extends Component<PropsType, StateType> {
     }
 
     componentWillReceiveProps(np) {
-
-        if (np.visible) {
+        if (np.visible && this.props.value != undefined && this.props.value != null) {
             this.setState({
                 selectedYear: this.props.dateType === 'JALALI' ?
                     UFRN.PersianJs(this.props.value.slice(0, 4)).englishNumber().toString()
