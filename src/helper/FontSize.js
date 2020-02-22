@@ -1,28 +1,28 @@
 import { Platform, StatusBar, Dimensions } from "react-native";
-const { width } = Dimensions.get("window");
-const deviceHeight = isIphoneX() ? width - 78 : Platform.OS === "android" ? width - StatusBar.currentHeight : width;
+const { height } = Dimensions.get("window");
+const deviceHeight = isIphoneX() ? height - 78 : Platform.OS === "android" ? height - StatusBar.currentHeight : height;
 /**
  * list of font sizes to use in style of view object in app
  */
 export default {
-    HEADER: RFPercentage(6.4),
-    HEADER_HEIGHT: RFPercentage(9),
-    TITLE: RFPercentage(6),
-    TITLE_HEIGHT: RFPercentage(8),
-    SUBTITLE: RFPercentage(4.8),
-    SUBTITLE_HEIGHT: RFPercentage(6.8),
-    ITEM: RFPercentage(3.96),
-    CONTENT: RFPercentage(3.82),
-    CONTENT_HEIGHT: RFPercentage(4.46),
-    MEDIUM: RFPercentage(3.12),
-    SMALL: RFPercentage(2.78),
-    CHAT: RFPercentage(3.45),
-    BUTTON: RFPercentage(4.12),
-    TOAST: RFPercentage(3.62),
+    HEADER: RFValue(23.46),
+    HEADER_HEIGHT: RFValue(33),
+    TITLE: RFValue(22),
+    TITLE_HEIGHT: RFValue(29.33),
+    SUBTITLE: RFValue(17.6),
+    SUBTITLE_HEIGHT: RFValue(24.93),
+    ITEM: RFValue(14.52),
+    CONTENT: RFValue(14),
+    CONTENT_HEIGHT: RFValue(16.35),
+    MEDIUM: RFValue(11.44),
+    SMALL: RFValue(10.19),
+    CHAT: RFValue(12.65),
+    BUTTON: RFValue(15.10),
+    TOAST: RFValue(13.27),
 }
 
-function RFPercentage(percent) {
-    const heightPercent = (percent * deviceHeight) / 100;
+function RFValue(percent) {
+    const heightPercent = (percent * deviceHeight) / 680;
     return Math.round(heightPercent);
 }
 
