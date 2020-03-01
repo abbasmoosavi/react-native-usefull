@@ -87,11 +87,6 @@ class WideButton extends Component<PropsType, StateType>{
         };
     }
 
-    componentDidMount() {
-
-    }
-
-
     render() {
         const { fontSize, textColor, height, width, radius, backgroundColor, shadow, shadowHeight } = this.state
         const { children, disabled, loading, style, textStyle, text, imageSource, onPress, iconSource, imageTintColor, imageStyle, iconStyle } = this.props

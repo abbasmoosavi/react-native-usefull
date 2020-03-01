@@ -52,10 +52,6 @@ class Layout extends Component<PropsType, StateType>{
         };
     }
 
-    componentDidMount() {
-
-    }
-
 
     render() {
         const { fontSize, textColor, backgroundColor, height, width } = this.state

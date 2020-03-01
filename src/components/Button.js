@@ -71,10 +71,6 @@ class Button extends Component<PropsType, StateType>{
         };
     }
 
-    componentDidMount() {
-
-    }
-
 
     render() {
         const { fontSize, textColor, height, width, backgroundColor } = this.state

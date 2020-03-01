@@ -101,7 +101,7 @@ class TimePicker extends Component<PropsType, StateType> {
         loading: false
     }
 
-    componentWillReceiveProps(np) {
+    UNSAFE_componentWillReceiveProps(np) {
         if (np.visible) {
             this.setState({
                 selectedHour: UFRN.PersianJs(this.props.value.slice(0, 2)).toEnglishNumber().toString(),

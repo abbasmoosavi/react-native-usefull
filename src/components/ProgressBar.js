@@ -60,7 +60,7 @@ class ProgressBar extends Component {
         }
     }
 
-    componentWillReceiveProps(props) {
+    UNSAFE_componentWillReceiveProps(props) {
         if (props.indeterminate !== this.props.indeterminate) {
             if (props.indeterminate) {
                 this.animate();

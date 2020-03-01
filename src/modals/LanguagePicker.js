@@ -90,8 +90,6 @@ class LanguagePicker extends Component<PropsType, StateType> {
             currentValue: this.props.value,
         };
     }
-    componentWillMount() {
-    }
 
     onValueChange(value) {
         this.setState({

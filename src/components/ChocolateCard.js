@@ -82,9 +82,6 @@ class ChocolateCard extends Component<PropsType, StateType>{
         };
     }
 
-    componentDidMount() {
-    }
-
     render() {
         const { backgroundColor, boxRadius, shadow, shadowHeight, textColor, fontSize } = this.state
         const { style, imageSource, text, title, titleStyle, textStyle, textButtonStyle, onPress, backgroundColorButton, textButton, buttonStyle } = this.props

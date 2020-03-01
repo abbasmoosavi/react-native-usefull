@@ -154,7 +154,7 @@ class DatePicker extends Component<PropsType, StateType> {
 
     }
 
-    componentWillReceiveProps(np) {
+    UNSAFE_componentWillReceiveProps(np) {
         if (np.visible && this.props.value != undefined && this.props.value != null) {
             this.setState({
                 selectedYear: this.props.dateType === 'JALALI' ?
