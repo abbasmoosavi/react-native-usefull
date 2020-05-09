@@ -84,7 +84,7 @@ class ChocolateCard extends Component<PropsType, StateType>{
 
     render() {
         const { backgroundColor, boxRadius, shadow, shadowHeight, textColor, fontSize } = this.state
-        const { style, imageSource, text, title, titleStyle, textStyle, textButtonStyle, onPress, backgroundColorButton, textButton, buttonStyle } = this.props
+        const { children, style, imageSource, text, title, titleStyle, textStyle, textButtonStyle, onPress, backgroundColorButton, textButton, buttonStyle } = this.props
         return (
             <View
                 style={[{
@@ -99,6 +99,7 @@ class ChocolateCard extends Component<PropsType, StateType>{
                     shadowRadius: boxRadius,
                     elevation: hp("1%")
                 }, style]}>
+                {children}
                 <UFRN.Image
                     style={{ width: '100%', height: '60%', borderRadius: boxRadius }}
                     source={imageSource}

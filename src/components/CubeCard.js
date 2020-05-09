@@ -57,13 +57,14 @@ class CubeCard extends Component<PropsType, StateType>{
 
     render() {
         const { textColor, fontSize } = this.state
-        const { text, imageSource, borderRadius, style, onPress, textStyle } = this.props
+        const { children, text, imageSource, borderRadius, style, onPress, textStyle } = this.props
         return (
             <UFRN.Ripple
                 onPress={onPress}
                 rippleContainerBorderRadius={borderRadius}
                 style={[{ borderRadius: borderRadius, height: wp('28%'), width: wp('28%'), justifyContent: 'center', alignItems: 'center', }, style]}>
                 <UFRN.Image source={imageSource} resizeMode={'cover'} style={{ height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', borderRadius: borderRadius }} />
+                {children}
                 <Text style={[{ position: 'absolute', color: textColor, fontSize: fontSize, textAlign: 'center' }, textStyle]}>{text}</Text>
             </UFRN.Ripple>
         )
