@@ -125,7 +125,7 @@ class LanguagePicker extends Component<PropsType, StateType> {
                             {/* Language picker */}
                             <Picker
                                 itemStyle={textStyle}
-                                style={{ width: '50%', height: '100%', backgroundColor: 'transparent' }}
+                                style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}
                                 selectedValue={currentValue.value}
                                 pickerData={data}
                                 onValueChange={value => this.onValueChange(value)}
