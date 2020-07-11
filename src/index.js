@@ -1,3 +1,4 @@
+import Dominant from './components/Dominant';
 import Button from './components/Button';
 import WideButton from './components/WideButton';
 import View from './components/View';
@@ -15,6 +16,7 @@ import ErrorBoundary from './helper/ErrorBoundary';
 import Values from './configs/Values';
 
 export default {
+  Dominant,
   Button,
   WideButton,
   View,
