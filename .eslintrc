@@ -1,0 +1,115 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import",
+    "eslint-plugin-prettier",
+    "eslint-plugin-react"
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "prefer-destructuring": "off",
+    "no-unused-expressions": "off",
+    "import/no-cycle": "off",
+    "import/named": "off",
+    "import/no-named-as-default": "off",
+    "no-labels": "off",
+    "react/no-array-index-key": "off",
+    "array-callback-return": "off",
+    "react/no-access-state-in-setstate": "off",
+    "no-nested-ternary": "off",
+    "no-console": "off",
+    "no-alert": "off",
+    "global-require": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/prefer-stateless-function": [
+      0
+    ],
+    "react/jsx-indent": [
+      0
+    ],
+    "react/sort-comp": [
+      0
+    ],
+    "react/destructuring-assignment": [
+      0
+    ],
+    "react/forbid-prop-types": [
+      0
+    ],
+    "react/no-unescaped-entities": [
+      "error",
+      {
+        "forbid": [
+          ">",
+          "}"
+        ]
+      }
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": false
+      }
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "camelcase": "off",
+    "no-use-before-define": "off",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "bracketSpacing": true,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "jsxSingleQuote": false,
+        "printWidth": 100,
+        "semi": true,
+        "jsxBracketSameLine": true,
+      }
+    ]
+  },
+  "env": {
+    "jest": true,
+    "es6": true
+  },
+  "globals": {
+    "fetch": true,
+    "FormData": true,
+    "require": true,
+    "Headers": true,
+    "alert": true,
+    "__DEV__": true,
+    "atob": true,
+    "btoa": true
+  }
+}

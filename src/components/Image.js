@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import {
   ImageStyle,
@@ -52,9 +53,11 @@ class Image extends Component<PropsType, StateType> {
       width: UFRN.Values.IMAGE_WIDTH,
     };
   }
+
   static defaultProps = {
     resizeMode: 'cover',
   };
+
   static propsType = {
     style: PropTypes.arrayOf(PropTypes.ImageStyle),
   };
@@ -69,8 +72,11 @@ class Image extends Component<PropsType, StateType> {
         return FastImage.resizeMode.center;
       case 'stretch':
         return FastImage.resizeMode.stretch;
+      default:
+        return FastImage.resizeMode.contain;
     }
   }
+
   render() {
     const { height, width } = this.state;
     const {
@@ -91,8 +97,7 @@ class Image extends Component<PropsType, StateType> {
         resizeMode={this.getResizeMode(resizeMode)}
         tintColor={tintColor !== undefined ? tintColor : null}
         style={[{ height, width }, style]}
-        source={source}
-      >
+        source={source}>
         {children}
       </FastImage>
     );
