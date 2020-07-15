@@ -43,10 +43,6 @@ type AdvertisingsProps = {
   /**
    * @property
    */
-  color: String,
-  /**
-   * @property
-   */
   data: Array,
   /**
    * @property
@@ -79,6 +75,8 @@ type AdvertisingsProps = {
 };
 
 const Advertisings = ({
+  inactiveIndicatorColor,
+  activeIndicatorColor,
   activeIndicator,
   indicatorContainerStyle,
   indicatorStyle,
@@ -86,7 +84,6 @@ const Advertisings = ({
   dominantStyle,
   style,
   containerStyle,
-  color,
   data,
   autoplay,
   loop,
@@ -127,8 +124,8 @@ const Advertisings = ({
           },
           indicatorStyle,
         ]}
-        inactiveDotColor={color.PAGINATION_DOT_INACTIVE}
-        dotColor={color.AMARANTH}
+        inactiveDotColor={inactiveIndicatorColor}
+        dotColor={activeIndicatorColor}
         inactiveDotOpacity={0.7}
         inactiveDotScale={0.7}
       />
@@ -183,7 +180,7 @@ const Advertisings = ({
                     width: '100%',
                     alignSelf: 'center',
                     borderRadius: Values.MODAL_RADIUS,
-                    shadowColor: color.SHADOW,
+                    shadowColor: '#000000',
                     shadowOffset: {
                       width: 0,
                       height: Values.SHADOW_HEIGHT,
@@ -234,7 +231,6 @@ const Advertisings = ({
                       ellipsizeMode="tail"
                       style={[
                         {
-                          color: color.BUTTON_TEXT,
                           fontSize: FontSize.CONTENT,
                         },
                         titleStyle,
@@ -246,7 +242,6 @@ const Advertisings = ({
                       ellipsizeMode="tail"
                       style={[
                         {
-                          color: color.BUTTON_TEXT,
                           fontSize: FontSize.MEDIUM,
                           marginTop: hp('0.5%'),
                         },
@@ -259,7 +254,7 @@ const Advertisings = ({
               </TouchableOpacity>
             )}
           />
-          {activeIndicatorProp ? pagination(color, activeSlide) : null}
+          {activeIndicatorProp ? pagination() : null}
         </View>
       ) : null}
     </View>
