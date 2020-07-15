@@ -98,6 +98,7 @@ const Advertisings = ({
 }: AdvertisingsProps) => {
   const [activeSlide, onChangeSlide] = useState(0);
 
+  const onPressDisabledProp = onPressDisabled || true;
   const activeIndicatorProp = activeIndicator || false;
   const dominantProp = dominant || false;
   const autoplayProp = autoplay || false;
@@ -174,7 +175,7 @@ const Advertisings = ({
             onSnapToItem={index => onChangeSlide(index)}
             renderItem={item => (
               <TouchableOpacity
-                disabled={onPressDisabled}
+                disabled={onPressDisabledProp}
                 onPress={() => Linking.openURL(item.item.link)}
                 style={[
                   {
