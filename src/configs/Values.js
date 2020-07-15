@@ -24,4 +24,7 @@ export default {
   IMAGE_WIDTH: wp('12%'),
   BOX_RADIUS: wp('3%'),
   SHADOW_HEIGHT: hp('0.5%'),
+  PAGINATION_DOT: wp('3%'),
+  SHADOW_ELEVATION: hp('1%'),
+  PADDING_HORIZENTAL: wp('4%'),
 };

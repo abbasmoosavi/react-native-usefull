@@ -1,4 +1,5 @@
 import Dominant from './components/Dominant';
+import Advertisings from './components/Advertisings';
 import Button from './components/Button';
 import WideButton from './components/WideButton';
 import View from './components/View';
@@ -17,6 +18,7 @@ import Values from './configs/Values';
 
 export default {
   Dominant,
+  Advertisings,
   Button,
   WideButton,
   View,
