@@ -352,9 +352,7 @@ class DatePicker extends Component<PropsType, StateType> {
   componentDidMount() {
     let currentYear = null;
     if (this.props.dateClass === 'BIRTHDATE') {
-      this.props.dateType === 'JALALI'
-        ? (currentYear = parseInt(m().jYear()))
-        : parseInt(m().year());
+      currentYear = this.props.dateType === 'JALALI' ? parseInt(m().jYear()): parseInt(m().year());
       for (let i = currentYear - 100; i <= currentYear; i++) {
         this.props.dateType === 'JALALI'
           ? this.state.years.push(
@@ -365,9 +363,7 @@ class DatePicker extends Component<PropsType, StateType> {
           : this.state.years.push(i);
       }
     } else {
-      this.props.dateType === 'JALALI'
-        ? (currentYear = parseInt(m().jYear()))
-        : (currentYear = parseInt(m().year()));
+      currentYear = this.props.dateType === 'JALALI' ? parseInt(m().jYear()): parseInt(m().year());
       for (let i = currentYear; i <= currentYear + 100; i++) {
         this.props.dateType === 'JALALI'
           ? this.state.years.push(
