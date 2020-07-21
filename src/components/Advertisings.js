@@ -95,7 +95,7 @@ const Advertisings = ({
 }: AdvertisingsProps) => {
   const [activeSlide, onChangeSlide] = useState(0);
 
-  const onPressDisabledProp = onPressDisabled || true;
+  const onPressDisabledProp = onPressDisabled || false;
   const activeIndicatorProp = activeIndicator || false;
   const dominantProp = dominant || false;
   const autoplayProp = autoplay || false;
