@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, Text, ViewStyle, TextStyle, Linking } from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  ViewStyle,
+  TextStyle,
+  Linking,
+  ImageResizeMode,
+} from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import {
   heightPercentageToDP as hp,
@@ -72,6 +80,13 @@ type AdvertisingsProps = {
    * @property
    */
   onPressDisabled: Boolean,
+  /**
+   * @property
+   * image size,
+   * use on of 'cover' | 'contain' | 'stretch' | 'repeat' | 'center',
+   * and default is 'cover
+   */
+  resizeModeImage: ImageResizeMode,
 };
 
 const Advertisings = ({
@@ -92,6 +107,7 @@ const Advertisings = ({
   widthItem = wp('92%'),
   heightItem = hp('28%'),
   onPressDisabled,
+  resizeModeImage = 'cover',
 }: AdvertisingsProps) => {
   const [activeSlide, onChangeSlide] = useState(0);
 
@@ -192,7 +208,7 @@ const Advertisings = ({
                   containerStyle,
                 ]}>
                 <Image
-                  resizeMode="stretch"
+                  resizeMode={resizeModeImage}
                   source={{
                     uri: item.item.cover,
                   }}
