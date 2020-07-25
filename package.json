@@ -1,6 +1,6 @@
 {
   "name": "react-native-usefull",
-  "version": "0.3.9",
+  "version": "0.3.8",
   "description": "UI Toolset & Components and API Library for React Native with RTL support.",
   "main": "src/index.js",
   "react-native": "src/index.js",
