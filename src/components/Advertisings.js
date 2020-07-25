@@ -1,13 +1,5 @@
 import React, { useState } from 'react';
-import {
-  View,
-  TouchableOpacity,
-  Text,
-  ViewStyle,
-  TextStyle,
-  Linking,
-  ImageResizeMode,
-} from 'react-native';
+import { View, TouchableOpacity, Text, ViewStyle, TextStyle, ImageResizeMode } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import {
   heightPercentageToDP as hp,
@@ -87,6 +79,11 @@ type AdvertisingsProps = {
    * and default is 'cover
    */
   resizeModeImage: ImageResizeMode,
+  /**
+   * @function
+   * action for button onPress
+   */
+  onPressItem: Function,
 };
 
 const Advertisings = ({
@@ -108,6 +105,7 @@ const Advertisings = ({
   heightItem = hp('28%'),
   onPressDisabled,
   resizeModeImage = 'cover',
+  onPressItem,
 }: AdvertisingsProps) => {
   const [activeSlide, onChangeSlide] = useState(0);
 
@@ -189,7 +187,7 @@ const Advertisings = ({
             renderItem={item => (
               <TouchableOpacity
                 disabled={onPressDisabledProp}
-                onPress={() => Linking.openURL(item.item.link)}
+                onPress={() => onPressItem(item.item)}
                 style={[
                   {
                     height: '100%',
