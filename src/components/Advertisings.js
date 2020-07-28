@@ -84,6 +84,11 @@ type AdvertisingsProps = {
    * action for button onPress
    */
   onPressItem: Function,
+  /**
+   * @property
+   * action for button onPress
+   */
+  enableMomentum: Boolean,
 };
 
 const Advertisings = ({
@@ -106,6 +111,7 @@ const Advertisings = ({
   onPressDisabled,
   resizeModeImage = 'cover',
   onPressItem,
+  enableMomentum,
 }: AdvertisingsProps) => {
   const [activeSlide, onChangeSlide] = useState(0);
 
@@ -114,6 +120,7 @@ const Advertisings = ({
   const dominantProp = dominant || false;
   const autoplayProp = autoplay || false;
   const loopProp = loop || false;
+  const enableMomentumProp = enableMomentum || false;
 
   function pagination() {
     return (
@@ -168,7 +175,7 @@ const Advertisings = ({
             data={data}
             loop={loopProp}
             autoplay={autoplayProp}
-            enableMomentum
+            enableMomentum={enableMomentumProp}
             autoplayInterval={4000}
             contentContainerCustomStyle={{
               height: heightItem,
