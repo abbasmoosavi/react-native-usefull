@@ -495,7 +495,6 @@ class DatePicker extends Component<PropsType, StateType> {
     return (
       <Modal
         backdropTransitionOutTiming={0}
-        useNativeDriver
         animationIn="slideInUp"
         animationOut="slideOutDown"
         backdropColor={shadow}
@@ -534,7 +533,8 @@ class DatePicker extends Component<PropsType, StateType> {
               }}>
               {/* Year picker */}
               <Picker
-                itemStyle={textStyle}
+                textSize={textStyle && textStyle.fontSize}
+                textColor={textStyle && textStyle.color}
                 style={{ width: '30%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedYear}
                 pickerData={years}
@@ -543,7 +543,8 @@ class DatePicker extends Component<PropsType, StateType> {
 
               {/* Month picker */}
               <Picker
-                itemStyle={textStyle}
+                textSize={textStyle && textStyle.fontSize}
+                textColor={textStyle && textStyle.color}
                 style={{ width: '40%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedMonthValue}
                 pickerData={months}
@@ -552,7 +553,8 @@ class DatePicker extends Component<PropsType, StateType> {
 
               {/* Day picker */}
               <Picker
-                itemStyle={textStyle}
+                textSize={textStyle && textStyle.fontSize}
+                textColor={textStyle && textStyle.color}
                 style={{ width: '20%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedDay}
                 pickerData={days}

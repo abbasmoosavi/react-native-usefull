@@ -124,7 +124,6 @@ class LanguagePicker extends Component<PropsType, StateType> {
     return (
       <Modal
         backdropTransitionOutTiming={0}
-        useNativeDriver
         animationIn="slideInUp"
         animationOut="slideOutDown"
         backdropColor={shadow}
@@ -163,7 +162,6 @@ class LanguagePicker extends Component<PropsType, StateType> {
               }}>
               {/* Language picker */}
               <Picker
-                itemStyle={textStyle}
                 textSize={textStyle && textStyle.fontSize}
                 textColor={textStyle && textStyle.color}
                 style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}

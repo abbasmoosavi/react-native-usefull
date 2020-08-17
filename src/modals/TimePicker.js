@@ -236,7 +236,6 @@ class TimePicker extends Component<PropsType, StateType> {
     return (
       <Modal
         backdropTransitionOutTiming={0}
-        useNativeDriver
         animationIn="slideInUp"
         animationOut="slideOutDown"
         backdropColor={shadow}
@@ -275,7 +274,8 @@ class TimePicker extends Component<PropsType, StateType> {
               }}>
               {/* Hour picker */}
               <Picker
-                itemStyle={textStyle}
+                textSize={textStyle && textStyle.fontSize}
+                textColor={textStyle && textStyle.color}
                 style={{ width: '20%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedHour}
                 pickerData={hours}
@@ -283,7 +283,8 @@ class TimePicker extends Component<PropsType, StateType> {
               />
 
               <Picker
-                itemStyle={textStyle}
+                textSize={textStyle && textStyle.fontSize}
+                textColor={textStyle && textStyle.color}
                 style={{ width: '15%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue=":"
                 pickerData={[':']}
@@ -292,7 +293,8 @@ class TimePicker extends Component<PropsType, StateType> {
 
               {/* Minute picker */}
               <Picker
-                itemStyle={textStyle}
+                textSize={textStyle && textStyle.fontSize}
+                textColor={textStyle && textStyle.color}
                 style={{ width: '20%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedMinute}
                 pickerData={minutes}
