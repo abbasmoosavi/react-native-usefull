@@ -52,6 +52,11 @@ type PropsType = {
    * action for Magazine categories item onPress
    */
   onPress: Function,
+  /**
+   * @property
+   * id for test
+   */
+  testID: String,
 };
 type StateType = {};
 class CubeCard extends Component<PropsType, StateType> {
@@ -74,9 +79,11 @@ class CubeCard extends Component<PropsType, StateType> {
       onPress,
       textStyle,
       imageResizeMode,
+      testID,
     } = this.props;
     return (
       <UFRN.Ripple
+        testID={testID}
         onPress={onPress}
         rippleContainerBorderRadius={borderRadius}
         style={[

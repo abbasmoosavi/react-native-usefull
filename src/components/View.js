@@ -35,6 +35,11 @@ type PropsType = {
    * image style, you can enter styles array
    */
   imageStyle?: ImageStyle | ImageStyle[],
+  /**
+   * @property
+   * id for test
+   */
+  testID: String,
 };
 type StateType = {};
 class Layout extends Component<PropsType, StateType> {
@@ -51,11 +56,12 @@ class Layout extends Component<PropsType, StateType> {
 
   render() {
     const { fontSize, textColor, backgroundColor, height, width } = this.state;
-    const { children, style, textStyle, imageStyle, text, imageSource } = this.props;
+    const { children, style, textStyle, imageStyle, text, imageSource, testID } = this.props;
     const Radius =
       style !== undefined && style.height !== undefined ? style.height / 2 : height / 2;
     return (
       <View
+        testID={testID}
         style={[
           {
             borderRadius: Radius,

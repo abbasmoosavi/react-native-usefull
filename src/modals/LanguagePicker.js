@@ -76,6 +76,11 @@ type PropsType = {
    * action for button onPress
    */
   onSubmit: Function,
+  /**
+   * @property
+   * id for test
+   */
+  testID: String,
 };
 type StateType = {};
 
@@ -120,9 +125,11 @@ class LanguagePicker extends Component<PropsType, StateType> {
       buttonStyle,
       screenType,
       data,
+      testID,
     } = this.props;
     return (
       <Modal
+        testID={testID}
         backdropTransitionOutTiming={0}
         animationIn="slideInUp"
         animationOut="slideOutDown"

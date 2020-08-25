@@ -42,6 +42,11 @@ type PropsType = {
 
   onLoadStart: ImageLoadEventDataAndroid,
   onLoadEnd: ImageLoadEventDataAndroid,
+  /**
+   * @property
+   * id for test
+   */
+  testID: String,
 };
 type StateType = {};
 
@@ -88,9 +93,11 @@ class Image extends Component<PropsType, StateType> {
       onProgress,
       onLoadStart,
       onLoadEnd,
+      testID,
     } = this.props;
     return (
       <FastImage
+        testID={testID}
         onProgress={onProgress}
         onLoadStart={onLoadStart}
         onLoadEnd={onLoadEnd}

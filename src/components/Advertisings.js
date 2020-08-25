@@ -89,6 +89,11 @@ type AdvertisingsProps = {
    * action for button onPress
    */
   enableMomentum: Boolean,
+  /**
+   * @property
+   * id for test
+   */
+  testID: String,
 };
 
 const Advertisings = ({
@@ -112,6 +117,7 @@ const Advertisings = ({
   resizeModeImage = 'cover',
   onPressItem,
   enableMomentum,
+  testID,
 }: AdvertisingsProps) => {
   const [activeSlide, onChangeSlide] = useState(0);
 
@@ -155,6 +161,7 @@ const Advertisings = ({
 
   return (
     <View
+      testID={testID}
       style={[
         {
           width: '100%',

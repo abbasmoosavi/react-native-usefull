@@ -59,6 +59,11 @@ type PropsType = {
    * action for button onPress
    */
   onPress: Function,
+  /**
+   * @property
+   * id for test button
+   */
+  testID: String,
 };
 type StateType = {};
 class Button extends Component<PropsType, StateType> {
@@ -86,6 +91,7 @@ class Button extends Component<PropsType, StateType> {
       text,
       imageSource,
       onPress,
+      testID,
     } = this.props;
     const Radius =
       style !== undefined && style.height !== undefined ? style.height / 2 : height / 2;
@@ -95,6 +101,7 @@ class Button extends Component<PropsType, StateType> {
         : this.state.loadingColor;
     return (
       <UFRN.Ripple
+        testID={testID}
         onPress={onPress}
         disabled={loading || disabled}
         rippleContainerBorderRadius={Radius}

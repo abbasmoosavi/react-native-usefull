@@ -26,6 +26,7 @@ class ProgressBar extends Component {
     useNativeDriver: PropTypes.bool,
     animationConfig: PropTypes.object,
     animationType: PropTypes.oneOf(['decay', 'timing', 'spring']),
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -126,6 +127,7 @@ class ProgressBar extends Component {
       style,
       unfilledColor,
       width,
+      testID,
       ...restProps
     } = this.props;
 
@@ -165,7 +167,11 @@ class ProgressBar extends Component {
     };
 
     return (
-      <View style={[containerStyle, style]} onLayout={this.handleLayout} {...restProps}>
+      <View
+        testID={testID}
+        style={[containerStyle, style]}
+        onLayout={this.handleLayout}
+        {...restProps}>
         <Animated.View style={progressStyle} />
         {children}
       </View>

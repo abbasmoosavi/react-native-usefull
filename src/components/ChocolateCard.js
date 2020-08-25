@@ -69,6 +69,11 @@ type PropsType = {
    * style for button
    */
   buttonStyle?: ViewStyle | ViewStyle[],
+  /**
+   * @property
+   * id for test
+   */
+  testID: String,
 };
 type StateType = {};
 class ChocolateCard extends Component<PropsType, StateType> {
@@ -99,9 +104,11 @@ class ChocolateCard extends Component<PropsType, StateType> {
       backgroundColorButton,
       textButton,
       buttonStyle,
+      testID,
     } = this.props;
     return (
       <View
+        testID={testID}
         style={[
           {
             backgroundColor,

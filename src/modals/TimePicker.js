@@ -75,6 +75,11 @@ type PropsType = {
    * action for button onPress
    */
   onSubmit: Function,
+  /**
+   * @property
+   * id for test
+   */
+  testID: String,
 };
 type StateType = {};
 
@@ -232,9 +237,11 @@ class TimePicker extends Component<PropsType, StateType> {
       buttonTextStyle,
       buttonStyle,
       screenType,
+      testID,
     } = this.props;
     return (
       <Modal
+        testID={testID}
         backdropTransitionOutTiming={0}
         animationIn="slideInUp"
         animationOut="slideOutDown"

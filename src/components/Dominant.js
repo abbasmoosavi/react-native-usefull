@@ -19,9 +19,14 @@ type DominantProps = {
    * default is '#6C6FFF'
    */
   defaultColor: string,
+  /**
+   * @property
+   * id for test
+   */
+  testID: String,
 };
 
-const Dominant = ({ imagePath, style, defaultColor = '#6C6FFF' }: DominantProps) => {
+const Dominant = ({ imagePath, style, defaultColor = '#6C6FFF', testID }: DominantProps) => {
   const [color, setColor] = useState(defaultColor);
   if (imagePath != null) {
     try {
@@ -32,6 +37,6 @@ const Dominant = ({ imagePath, style, defaultColor = '#6C6FFF' }: DominantProps)
       console.log('error getColorFromURL:', e);
     }
   }
-  return <View style={[{ backgroundColor: color }, style]} />;
+  return <View testID={testID} style={[{ backgroundColor: color }, style]} />;
 };
 export default Dominant;

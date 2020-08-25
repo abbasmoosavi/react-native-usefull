@@ -69,6 +69,11 @@ type PropsType = {
    * action for button onPress
    */
   onPress: Function,
+  /**
+   * @property
+   * id for test
+   */
+  testID: String,
 };
 type StateType = {};
 
@@ -111,9 +116,11 @@ class WideButton extends Component<PropsType, StateType> {
       imageTintColor,
       imageStyle,
       iconStyle,
+      testID,
     } = this.props;
     return (
       <UFRN.Ripple
+        testID={testID}
         onPress={onPress}
         disabled={loading || disabled}
         rippleContainerBorderRadius={radius}
