@@ -9,7 +9,9 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import { Picker } from 'react-native-best-wheel-datepicker';
-import UFRN from '..';
+import Values from '../configs/Values';
+import PersianJs from '../helper/PersianJs';
+import Button from '../components/Button';
 
 type PropsType = {
   /**
@@ -87,10 +89,10 @@ class TimePicker extends Component<PropsType, StateType> {
   constructor(props) {
     super(props);
     this.state = {
-      backgroundColor: UFRN.Values.MODAL_BACKGROUND,
-      modalRadius: UFRN.Values.MODAL_RADIUS,
-      padding: UFRN.Values.PADDING,
-      shadow: UFRN.Values.SHADOW_COLOR,
+      backgroundColor: Values.MODAL_BACKGROUND,
+      modalRadius: Values.MODAL_RADIUS,
+      padding: Values.PADDING,
+      shadow: Values.SHADOW_COLOR,
 
       hours: [
         '00',
@@ -193,19 +195,15 @@ class TimePicker extends Component<PropsType, StateType> {
   UNSAFE_componentWillReceiveProps(np) {
     if (np.visible) {
       this.setState({
-        selectedHour: UFRN.PersianJs(this.props.value.slice(0, 2))
-          .toEnglishNumber()
-          .toString(),
-        selectedMinute: UFRN.PersianJs(this.props.value.slice(3, 6))
-          .toEnglishNumber()
-          .toString(),
+        selectedHour: PersianJs(this.props.value.slice(0, 2)).toEnglishNumber().toString(),
+        selectedMinute: PersianJs(this.props.value.slice(3, 6)).toEnglishNumber().toString(),
       });
     }
   }
 
   submit() {
     this.props.onSubmit(
-      UFRN.PersianJs(`${this.state.selectedHour}:${this.state.selectedMinute}`)
+      PersianJs(`${this.state.selectedHour}:${this.state.selectedMinute}`)
         .persianNumber()
         .toString(),
     );
@@ -286,7 +284,7 @@ class TimePicker extends Component<PropsType, StateType> {
                 style={{ width: '20%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedHour}
                 pickerData={hours}
-                onValueChange={selectedHour => this.setState({ selectedHour })}
+                onValueChange={(selectedHour) => this.setState({ selectedHour })}
               />
 
               <Picker
@@ -295,7 +293,7 @@ class TimePicker extends Component<PropsType, StateType> {
                 style={{ width: '15%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue=":"
                 pickerData={[':']}
-                onValueChange={value => null}
+                onValueChange={(value) => null}
               />
 
               {/* Minute picker */}
@@ -305,12 +303,12 @@ class TimePicker extends Component<PropsType, StateType> {
                 style={{ width: '20%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedMinute}
                 pickerData={minutes}
-                onValueChange={selectedMinute => this.setState({ selectedMinute })}
+                onValueChange={(selectedMinute) => this.setState({ selectedMinute })}
               />
             </View>
 
             {/* accept button for choose time */}
-            <UFRN.Button
+            <Button
               disabled={disabled}
               loading={loading}
               onPress={() => this.submit()}

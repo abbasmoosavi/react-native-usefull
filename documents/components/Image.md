@@ -59,6 +59,3 @@ resize mode image between cover, contain, stretch, repeat, center
 TYPE         | REQUIRED    | DEFAULT
 ------------ | ----------- | ----------
 _ImageResizeMode_    | _no_        | contain
-
-## note
-use FastImage from react-native-fast-image in base this component

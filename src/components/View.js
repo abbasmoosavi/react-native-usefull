@@ -2,8 +2,17 @@
  * کلید ها
  */
 import React, { Component } from 'react';
-import { Text, View, ViewStyle, ImageStyle, TextStyle, ImageSourcePropType } from 'react-native';
-import UFRN from '..';
+import {
+  Text,
+  View,
+  ViewStyle,
+  ImageStyle,
+  TextStyle,
+  ImageSourcePropType,
+  Image,
+} from 'react-native';
+import Values from '../configs/Values';
+import FontSize from '../helper/FontSize';
 
 type PropsType = {
   /**
@@ -46,11 +55,11 @@ class Layout extends Component<PropsType, StateType> {
   constructor(props) {
     super(props);
     this.state = {
-      height: UFRN.Values.BUTTON_HEIGHT,
-      width: UFRN.Values.BUTTON_WIDTH,
-      fontSize: UFRN.FontSize.SUBTITLE,
-      backgroundColor: UFRN.Values.BUTTON_BACKGROUND,
-      textColor: UFRN.Values.BUTTON_TEXT_COLOR,
+      height: Values.BUTTON_HEIGHT,
+      width: Values.BUTTON_WIDTH,
+      fontSize: FontSize.SUBTITLE,
+      backgroundColor: Values.BUTTON_BACKGROUND,
+      textColor: Values.BUTTON_TEXT_COLOR,
     };
   }
 
@@ -80,7 +89,7 @@ class Layout extends Component<PropsType, StateType> {
         ) : null}
 
         {imageSource !== undefined ? (
-          <UFRN.Image
+          <Image
             style={[{ height: '40%', width: '40%' }, imageStyle]}
             source={imageSource}
             resizeMode="contain"

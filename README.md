@@ -6,10 +6,6 @@
 
 `$ yarn add  react-native-usefull`
 
-### Modules need before use
-
-`react-native-fast-image`
-
 ## Usage
 ```javascript
 

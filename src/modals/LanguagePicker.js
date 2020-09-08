@@ -10,7 +10,8 @@ import {
 } from 'react-native-responsive-screen';
 import { Picker } from 'react-native-best-wheel-datepicker';
 import _ from 'lodash';
-import UFRN from '..';
+import Values from '../configs/Values';
+import Button from '../components/Button';
 
 type PropsType = {
   /**
@@ -88,10 +89,10 @@ class LanguagePicker extends Component<PropsType, StateType> {
   constructor(props) {
     super(props);
     this.state = {
-      backgroundColor: UFRN.Values.MODAL_BACKGROUND,
-      modalRadius: UFRN.Values.MODAL_RADIUS,
-      padding: UFRN.Values.PADDING,
-      shadow: UFRN.Values.SHADOW_COLOR,
+      backgroundColor: Values.MODAL_BACKGROUND,
+      modalRadius: Values.MODAL_RADIUS,
+      padding: Values.PADDING,
+      shadow: Values.SHADOW_COLOR,
 
       currentValue: this.props.value,
     };
@@ -174,12 +175,12 @@ class LanguagePicker extends Component<PropsType, StateType> {
                 style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={currentValue.value}
                 pickerData={data}
-                onValueChange={value => this.onValueChange(value)}
+                onValueChange={(value) => this.onValueChange(value)}
               />
             </View>
 
             {/* accept button for choose language */}
-            <UFRN.Button
+            <Button
               disabled={disabled}
               loading={loading}
               onPress={() => this.submit()}

@@ -10,7 +10,9 @@ import {
 } from 'react-native-responsive-screen';
 import { Picker } from 'react-native-best-wheel-datepicker';
 import m from 'moment-jalaali';
-import UFRN from '../../';
+import Values from '../configs/Values';
+import PersianJs from '../helper/PersianJs';
+import Button from '../components/Button';
 
 type PropsType = {
   /**
@@ -102,10 +104,10 @@ class DatePicker extends Component<PropsType, StateType> {
   constructor(props) {
     super(props);
     this.state = {
-      backgroundColor: UFRN.Values.MODAL_BACKGROUND,
-      modalRadius: UFRN.Values.MODAL_RADIUS,
-      padding: UFRN.Values.PADDING,
-      shadow: UFRN.Values.SHADOW_COLOR,
+      backgroundColor: Values.MODAL_BACKGROUND,
+      modalRadius: Values.MODAL_RADIUS,
+      padding: Values.PADDING,
+      shadow: Values.SHADOW_COLOR,
 
       years: [],
       months:
@@ -360,22 +362,14 @@ class DatePicker extends Component<PropsType, StateType> {
       currentYear = this.props.dateType === 'JALALI' ? parseInt(m().jYear()) : parseInt(m().year());
       for (let i = currentYear - 100; i <= currentYear; i++) {
         this.props.dateType === 'JALALI'
-          ? this.state.years.push(
-              UFRN.PersianJs(i)
-                .englishNumber()
-                .toString(),
-            )
+          ? this.state.years.push(PersianJs(i).englishNumber().toString())
           : this.state.years.push(i);
       }
     } else {
       currentYear = this.props.dateType === 'JALALI' ? parseInt(m().jYear()) : parseInt(m().year());
       for (let i = currentYear; i <= currentYear + 100; i++) {
         this.props.dateType === 'JALALI'
-          ? this.state.years.push(
-              UFRN.PersianJs(i)
-                .englishNumber()
-                .toString(),
-            )
+          ? this.state.years.push(PersianJs(i).englishNumber().toString())
           : this.state.years.push(i);
       }
     }
@@ -390,24 +384,16 @@ class DatePicker extends Component<PropsType, StateType> {
       this.setState({
         selectedYear:
           this.props.dateType === 'JALALI'
-            ? UFRN.PersianJs(this.props.value.slice(0, 4))
-                .englishNumber()
-                .toString()
+            ? PersianJs(this.props.value.slice(0, 4)).englishNumber().toString()
             : this.props.value.slice(0, 4),
 
         selectedMonth: this.props.value.slice(5, 7),
         selectedMonthValue: this.state.months[
-          parseInt(
-            UFRN.PersianJs(this.props.value.slice(5, 7))
-              .toEnglishNumber()
-              .toString(),
-          ) - 1
+          parseInt(PersianJs(this.props.value.slice(5, 7)).toEnglishNumber().toString()) - 1
         ],
         selectedDay:
           this.props.dateType === 'JALALI'
-            ? UFRN.PersianJs(this.props.value.slice(8, 10))
-                .englishNumber()
-                .toString()
+            ? PersianJs(this.props.value.slice(8, 10)).englishNumber().toString()
             : this.props.value.slice(8, 10),
       });
     }
@@ -419,20 +405,14 @@ class DatePicker extends Component<PropsType, StateType> {
       this.setState({
         selectedMonth:
           this.props.dateType === 'JALALI'
-            ? UFRN.PersianJs(`0${index}`)
-                .englishNumber()
-                .toString()
+            ? PersianJs(`0${index}`).englishNumber().toString()
             : `0${index}`,
         selectedMonthValue: value,
       });
     } else {
       this.setState({
         selectedMonth:
-          this.props.dateType === 'JALALI'
-            ? UFRN.PersianJs(index)
-                .englishNumber()
-                .toString()
-            : index,
+          this.props.dateType === 'JALALI' ? PersianJs(index).englishNumber().toString() : index,
         selectedMonthValue: value,
       });
     }
@@ -449,20 +429,18 @@ class DatePicker extends Component<PropsType, StateType> {
   submit() {
     this.props.dateType === 'JALALI'
       ? this.props.onSubmit(
-          `${UFRN.PersianJs(this.state.selectedYear)
+          `${PersianJs(this.state.selectedYear).persianNumber().toString()}/${PersianJs(
+            this.state.selectedMonth,
+          )
             .persianNumber()
-            .toString()}/${UFRN.PersianJs(this.state.selectedMonth)
-            .persianNumber()
-            .toString()}/${UFRN.PersianJs(this.state.selectedDay)
-            .persianNumber()
-            .toString()}`,
+            .toString()}/${PersianJs(this.state.selectedDay).persianNumber().toString()}`,
         )
       : this.props.onSubmit(
-          UFRN.PersianJs(this.state.selectedYear).toString() +
+          PersianJs(this.state.selectedYear).toString() +
             this.props.separator +
-            UFRN.PersianJs(this.state.selectedMonth).toString() +
+            PersianJs(this.state.selectedMonth).toString() +
             this.props.separator +
-            UFRN.PersianJs(this.state.selectedDay).toString(),
+            PersianJs(this.state.selectedDay).toString(),
         );
 
     this.handleClose();
@@ -545,7 +523,7 @@ class DatePicker extends Component<PropsType, StateType> {
                 style={{ width: '30%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedYear}
                 pickerData={years}
-                onValueChange={selectedYear => this.setState({ selectedYear: selectedYear })}
+                onValueChange={(selectedYear) => this.setState({ selectedYear: selectedYear })}
               />
 
               {/* Month picker */}
@@ -555,7 +533,7 @@ class DatePicker extends Component<PropsType, StateType> {
                 style={{ width: '40%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedMonthValue}
                 pickerData={months}
-                onValueChange={value => this.firstHalfOrSecondHalf(value)}
+                onValueChange={(value) => this.firstHalfOrSecondHalf(value)}
               />
 
               {/* Day picker */}
@@ -565,12 +543,12 @@ class DatePicker extends Component<PropsType, StateType> {
                 style={{ width: '20%', height: '100%', backgroundColor: 'transparent' }}
                 selectedValue={selectedDay}
                 pickerData={days}
-                onValueChange={selectedDay => this.setState({ selectedDay })}
+                onValueChange={(selectedDay) => this.setState({ selectedDay })}
               />
             </View>
 
             {/* accept button for choose date */}
-            <UFRN.Button
+            <Button
               disabled={disabled}
               loading={loading}
               onPress={() => this.submit()}

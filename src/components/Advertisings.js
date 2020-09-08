@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, Text, ViewStyle, TextStyle, ImageResizeMode } from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  ViewStyle,
+  TextStyle,
+  ImageResizeMode,
+  Image,
+} from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 import { Col } from 'react-native-easy-grid';
-import Image from './Image';
 import Dominant from './Dominant';
 import FontSize from '../helper/FontSize';
 import Values from '../configs/Values';
@@ -197,8 +204,8 @@ const Advertisings = ({
             sliderWidth={wp('100%')}
             sliderHeight={heightItem}
             itemWidth={widthItem}
-            onSnapToItem={index => onChangeSlide(index)}
-            renderItem={item => (
+            onSnapToItem={(index) => onChangeSlide(index)}
+            renderItem={(item) => (
               <TouchableOpacity
                 disabled={onPressDisabledProp}
                 onPress={() => onPressItem(item.item)}

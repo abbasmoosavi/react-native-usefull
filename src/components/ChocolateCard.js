@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
-import { Text, View, I18nManager, ImageSourcePropType, ViewStyle, TextStyle } from 'react-native';
+import {
+  Text,
+  View,
+  I18nManager,
+  ImageSourcePropType,
+  ViewStyle,
+  TextStyle,
+  Image,
+} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import UFRN from 'react-native-usefull';
+import Button from './Button';
+import Values from '../configs/Values';
+import FontSize from '../helper/FontSize';
 
 type PropsType = {
   /**
@@ -80,12 +90,12 @@ class ChocolateCard extends Component<PropsType, StateType> {
   constructor(props) {
     super(props);
     this.state = {
-      backgroundColor: UFRN.Values.BOX_BACKGROUND,
-      boxRadius: UFRN.Values.BOX_RADIUS,
-      shadow: UFRN.Values.SHADOW_COLOR,
-      shadowHeight: UFRN.Values.SHADOW_HEIGHT,
-      textColor: UFRN.Values.BUTTON_TEXT_COLOR,
-      fontSize: UFRN.FontSize.SUBTITLE,
+      backgroundColor: Values.BOX_BACKGROUND,
+      boxRadius: Values.BOX_RADIUS,
+      shadow: Values.SHADOW_COLOR,
+      shadowHeight: Values.SHADOW_HEIGHT,
+      textColor: Values.BUTTON_TEXT_COLOR,
+      fontSize: FontSize.SUBTITLE,
     };
   }
 
@@ -125,7 +135,7 @@ class ChocolateCard extends Component<PropsType, StateType> {
           style,
         ]}>
         {children}
-        <UFRN.Image
+        <Image
           style={{ width: '100%', height: '60%', borderRadius: boxRadius }}
           source={imageSource}
         />
@@ -145,7 +155,7 @@ class ChocolateCard extends Component<PropsType, StateType> {
                 textAlign: I18nManager.isRTL ? 'left' : 'right',
                 width: '100%',
                 fontSize,
-                lineHeight: UFRN.FontSize.SUBTITLE_HEIGHT,
+                lineHeight: FontSize.SUBTITLE_HEIGHT,
                 alignSelf: 'flex-start',
               },
               titleStyle,
@@ -173,7 +183,7 @@ class ChocolateCard extends Component<PropsType, StateType> {
           </Text>
 
           {/* کلید مطالعه بیشتر */}
-          <UFRN.Button
+          <Button
             onPress={onPress}
             text={textButton}
             style={[

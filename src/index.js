@@ -3,7 +3,6 @@ import Advertisings from './components/Advertisings';
 import Button from './components/Button';
 import WideButton from './components/WideButton';
 import View from './components/View';
-import Image from './components/Image';
 import CubeCard from './components/CubeCard';
 import ChocolateCard from './components/ChocolateCard';
 import PersianJs from './helper/PersianJs';
@@ -22,7 +21,6 @@ export default {
   Button,
   WideButton,
   View,
-  Image,
   CubeCard,
   ChocolateCard,
   PersianJs,

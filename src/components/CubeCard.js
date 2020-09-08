@@ -2,12 +2,14 @@
  * آیتم های دسته بندی مجله رای
  */
 import React, { Component } from 'react';
-import { Text, ViewStyle, TextStyle, ImageSourcePropType } from 'react-native';
+import { Text, ViewStyle, TextStyle, ImageSourcePropType, Image } from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import UFRN from 'react-native-usefull';
+import Values from '../configs/Values';
+import FontSize from '../helper/FontSize';
+import Ripple from '../helper/Ripple';
 
 type PropsType = {
   /**
@@ -63,8 +65,8 @@ class CubeCard extends Component<PropsType, StateType> {
   constructor(props) {
     super(props);
     this.state = {
-      fontSize: UFRN.FontSize.SUBTITLE,
-      textColor: UFRN.Values.BUTTON_TEXT_COLOR,
+      fontSize: FontSize.SUBTITLE,
+      textColor: Values.BUTTON_TEXT_COLOR,
     };
   }
 
@@ -82,7 +84,7 @@ class CubeCard extends Component<PropsType, StateType> {
       testID,
     } = this.props;
     return (
-      <UFRN.Ripple
+      <Ripple
         testID={testID}
         onPress={onPress}
         rippleContainerBorderRadius={borderRadius}
@@ -96,7 +98,7 @@ class CubeCard extends Component<PropsType, StateType> {
           },
           style,
         ]}>
-        <UFRN.Image
+        <Image
           source={imageSource}
           resizeMode={imageResizeMode || 'cover'}
           style={{
@@ -115,7 +117,7 @@ class CubeCard extends Component<PropsType, StateType> {
           ]}>
           {text}
         </Text>
-      </UFRN.Ripple>
+      </Ripple>
     );
   }
 }
