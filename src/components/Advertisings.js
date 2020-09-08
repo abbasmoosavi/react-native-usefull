@@ -231,10 +231,10 @@ const Advertisings = ({
                   source={{
                     uri: item.item.cover,
                   }}
+                  imageStyle={{borderRadius: Values.MODAL_RADIUS}}
                   style={{
                     height: '100%',
                     width: '100%',
-                    borderRadius: Values.MODAL_RADIUS,
                   }}>
                   {dominantProp ? (
                     <Dominant
