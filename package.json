@@ -1,6 +1,6 @@
 {
   "name": "react-native-usefull",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "UI Toolset & Components and API Library for React Native with RTL support.",
   "main": "src/index.js",
   "react-native": "src/index.js",
@@ -64,7 +64,7 @@
     "prop-types": "15.7.2",
     "react": "*",
     "react-native": "*",
-    "react-native-best-wheel-datepicker": "0.0.6",
+    "react-native-best-wheel-datepicker": "0.0.7",
     "react-native-easy-grid": "0.2.2",
     "react-native-modal": "11.5.3",
     "react-native-responsive-screen": "1.4.1",
