@@ -6,7 +6,7 @@ import {
   ViewStyle,
   TextStyle,
   ImageResizeMode,
-  Image,
+  ImageBackground,
 } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import {
@@ -226,7 +226,7 @@ const Advertisings = ({
                   },
                   containerStyle,
                 ]}>
-                <Image
+                <ImageBackground
                   resizeMode={resizeModeImage}
                   source={{
                     uri: item.item.cover,
@@ -285,7 +285,7 @@ const Advertisings = ({
                       {item.item.text}
                     </Text>
                   </Col>
-                </Image>
+                </ImageBackground>
               </TouchableOpacity>
             )}
           />
