@@ -9,8 +9,11 @@ import {
   TextStyle,
   ImageStyle,
   ImageSourcePropType,
+  Image
 } from 'react-native';
-import UFRN from '..';
+import Ripple from '../helper/Ripple';
+import FontSize from '../helper/FontSize';
+import Values from '../configs/Values';
 
 type PropsType = {
   /**
@@ -70,12 +73,12 @@ class Button extends Component<PropsType, StateType> {
   constructor(props) {
     super(props);
     this.state = {
-      height: UFRN.Values.BUTTON_HEIGHT,
-      width: UFRN.Values.BUTTON_WIDTH,
-      loadingColor: UFRN.Values.LOADING_COLOR,
-      fontSize: UFRN.FontSize.SUBTITLE,
-      backgroundColor: UFRN.Values.BUTTON_BACKGROUND,
-      textColor: UFRN.Values.BUTTON_TEXT_COLOR,
+      height: Values.BUTTON_HEIGHT,
+      width: Values.BUTTON_WIDTH,
+      loadingColor: Values.LOADING_COLOR,
+      fontSize: FontSize.SUBTITLE,
+      backgroundColor: Values.BUTTON_BACKGROUND,
+      textColor: Values.BUTTON_TEXT_COLOR,
     };
   }
 
@@ -100,7 +103,7 @@ class Button extends Component<PropsType, StateType> {
         ? textStyle.color
         : this.state.loadingColor;
     return (
-      <UFRN.Ripple
+      <Ripple
         testID={testID}
         onPress={onPress}
         disabled={loading || disabled}
@@ -130,7 +133,7 @@ class Button extends Component<PropsType, StateType> {
           loading ? (
             <ActivityIndicator color={loadingColor} size={fontSize * 1.5} />
           ) : (
-            <UFRN.Image
+            <Image
               style={[{ height: '40%', width: '40%' }, imageStyle]}
               tintColor={imageStyle.tintColor}
               source={imageSource}
@@ -138,7 +141,7 @@ class Button extends Component<PropsType, StateType> {
             />
           )
         ) : null}
-      </UFRN.Ripple>
+      </Ripple>
     );
   }
 }
