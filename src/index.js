@@ -1,7 +1,6 @@
 import Dominant from './components/Dominant';
 import Advertisings from './components/Advertisings';
 import Button from './components/Button';
-import Image from './components/Image';
 import WideButton from './components/WideButton';
 import View from './components/View';
 import CubeCard from './components/CubeCard';
@@ -20,7 +19,6 @@ export default {
   Dominant,
   Advertisings,
   Button,
-  Image,
   WideButton,
   View,
   CubeCard,
