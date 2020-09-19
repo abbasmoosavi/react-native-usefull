@@ -142,7 +142,6 @@ const Advertisings = ({
         activeDotIndex={activeSlide}
         containerStyle={[
           {
-            width: '100%',
             backgroundColor: 'transparent',
             position: 'absolute',
             bottom: -hp('7%'),
