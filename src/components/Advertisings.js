@@ -7,6 +7,7 @@ import {
   TextStyle,
   ImageResizeMode,
   ImageBackground,
+  ImageStyle,
 } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import {
@@ -70,6 +71,10 @@ type AdvertisingsProps = {
   /**
    * @property
    */
+  imageStyle: ImageStyle | ImageStyle[],
+  /**
+   * @property
+   */
   widthItem: Number,
   /**
    * @property
@@ -118,6 +123,7 @@ const Advertisings = ({
   loop,
   titleStyle,
   textStyle,
+  imageStyle,
   widthItem = wp('92%'),
   heightItem = hp('28%'),
   onPressDisabled,
@@ -171,7 +177,7 @@ const Advertisings = ({
       style={[
         {
           width: '100%',
-          height: heightItem + hp('3%'),
+          height: heightItem + hp('1%'),
           justifyContent: 'flex-start',
           alignItems: 'center',
         },
@@ -210,7 +216,7 @@ const Advertisings = ({
                 onPress={() => onPressItem(item.item)}
                 style={[
                   {
-                    height: '100%',
+                    height: '96%',
                     width: '100%',
                     alignSelf: 'center',
                     borderRadius: Values.MODAL_RADIUS,
@@ -230,7 +236,7 @@ const Advertisings = ({
                   source={{
                     uri: item.item.cover,
                   }}
-                  imageStyle={{borderRadius: Values.MODAL_RADIUS}}
+                  imageStyle={[{ borderRadius: Values.MODAL_RADIUS }, imageStyle]}
                   style={{
                     height: '100%',
                     width: '100%',
